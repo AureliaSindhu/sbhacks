@@ -15,8 +15,8 @@ export default function Home() {
       <main className="flex-grow bg-[#342F2F]">
         <div className="text-white">
         <div className="container mx-auto px-4 py-8 flex flex-col items-center text-center">
-        <h1 className="text-4xl items-center mb-4">
-          Revolutionize Your <span>Studying</span> with <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600"> AI-powered</span> Voice Chat
+        <h1 className="text-4xl items-center mb-10">
+          Revolutionize Your <span className="border-2 border-yellow-400 text-yellow-400 pr-4 pl-4 pt-2 pb-2 rounded-full">Studying</span> with <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600"> AI-powered</span> Voice Chat
         </h1>
             <div className="pb-4 w-full">
             <Image
