@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { Send } from 'lucide-react'
 
 type Message = {
     id: number;
@@ -29,26 +30,29 @@ export default function Transcript() {
 
     return (
         <div className="flex flex-col h-full bg-gray-50 p-4 rounded-lg">
-        <div className="flex-grow overflow-auto mb-4">
-            {messages.map((message) => (
-            <div key={message.id} className={`mb-4 ${message.sender === 'user' ? 'text-right' : 'text-left'}`}>
-                <div className={`inline-block p-2 rounded-lg ${message.sender === 'user' ? 'bg-blue-500 text-white' : 'bg-white text-black'}`}>
-                {message.text}
+            <div className="flex-grow overflow-auto mb-4">
+                {messages.map((message) => (
+                <div key={message.id} className={`mb-4 ${message.sender === 'user' ? 'text-right' : 'text-left'}`}>
+                    <div className={`inline-block p-2 rounded-lg ${message.sender === 'user' ? 'bg-[#342F2F] text-yellow-400' : 'bg-gray-200 text-[#342F2F]'}`}>
+                    {message.text}
+                    </div>
                 </div>
+                ))}
             </div>
-            ))}
+
+            <div className="flex gap-2">
+                <Input
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Type your message..."
+                onKeyPress={(e) => e.key === 'Enter' && handleSend()}
+                />
+                <Button onClick={handleSend} className="bg-yellow-400">
+                    <Send/>
+                </Button>
+            </div>
         </div>
-        <div className="flex gap-2">
-            <Input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="Type your message..."
-            onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-            />
-            <Button onClick={handleSend}>Send</Button>
-        </div>
-        </div>
-    )
+    );
 }
 
