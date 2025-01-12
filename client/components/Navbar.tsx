@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 
 export default function Navbar() {
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-gray-100 shadow-md">
       <div className="container mx-auto">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
