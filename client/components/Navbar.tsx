@@ -5,9 +5,9 @@ import LogoIcon from "../public/img/logo.png"
 
 export default function Navbar() {
   return (
-    <nav className="bg-[#342F2F] shadow-lg">
+    <nav className="bg-[#342F2F] shadow-lg pt-2">
       <div className="container mx-auto">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center">
             <div className="flex items-center">
               <Image src={LogoIcon} alt="Logo" width={32} height={32} className="mr-2"/>
               <Link href="/" className="text-2xl font-bold text-white">

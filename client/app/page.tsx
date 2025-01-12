@@ -15,8 +15,8 @@ export default function Home() {
       <main className="flex-grow bg-[#342F2F]">
         <div className="text-white">
         <div className="container mx-auto px-4 py-8 flex flex-col items-center text-center">
-        <h1 className="text-4xl items-center mb-4">
-          Revolutionize Your <span>Studying</span> with <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600"> AI-powered</span> Voice Chat
+        <h1 className="text-4xl items-center mb-10">
+          Revolutionize Your <span className="border-2 border-yellow-400 text-yellow-400 pr-4 pl-4 pt-2 pb-2 rounded-full">Studying</span> with <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600"> AI-powered</span> Voice Chat
         </h1>
             <div className="pb-4 w-full">
             <Image
@@ -28,11 +28,11 @@ export default function Home() {
               className="w-full h-auto"
             />
             </div>
-          <div className="flex space-x-2">
-            <Button size="lg" className="bg-gray-600 p-4 ml-4 mr-4 hover:bg-yellow-500 hover:text-black">
+          <div className="flex space-x-4">
+            <Button size="lg" className="bg-[#EFE63E] text-black p-4 ml-4 mr-4 text-lg hover:text-white">
               Start Learning
             </Button>
-            <Button size="lg" className="bg-gray-600 p-4 ml-4 mr-4 hover:bg-yellow-500 hover:text-black">
+            <Button size="lg" className="bg-[#342F2F] border-2 border-gray-300 p-4 ml-4 mr-4 text-lg hover:text-white hover:border-none">
               Watch Demo
             </Button>
           </div>
