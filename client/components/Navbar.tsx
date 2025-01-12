@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 export default function Navbar() {
   return (
     <nav className="bg-white shadow-md">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link href="/" className="text-2xl font-bold text-primary">
@@ -24,9 +24,11 @@ export default function Navbar() {
               </Link>
             </div>
           </div>
-          <div className="hidden md:block">
-            <Button>Get Started</Button>
-          </div>
+            <div className="hidden md:block">
+              <Link href="/demo">
+                <Button>Get Started</Button>
+              </Link>
+            </div>
         </div>
       </div>
     </nav>

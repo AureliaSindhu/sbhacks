@@ -4,15 +4,15 @@ import rubberduckPath from "@/public/img/rubberduck.png";
 
 export default function Hero() {
   return (
-    <div className="bg-gradient-to-r bg-blue-900 text-white">
-      <div className="container mx-auto px-4 py-4 flex flex-col items-center text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 max-w-3xl">
-          Revolutionize Your Study Experience with Talktuahduck
+    <div className="bg-gradient-to-r bg-blue-200 text-black">
+      <div className="container mx-auto px-4 py-12 flex flex-col items-center text-center">
+        <h1 className="text-4xl max-w-3xl">
+          Revolutionize Your Study Experience with <span className="font-black">Talktuahduck</span>
         </h1>
         {/* <p className="text-xl mb-8 max-w-2xl">
           Transform unstructured notes into interactive learning sessions. Explain concepts out loud, boost comprehension, and master your studies with AI-powered assistance.
         </p> */}
-        <div className="mb-10">
+        <div className="pb-4">
           <Image
             src={rubberduckPath}
             alt="Talktuahduck Demo"
