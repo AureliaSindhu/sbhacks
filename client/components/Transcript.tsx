@@ -28,7 +28,7 @@ export default function Transcript() {
     }
 
     return (
-        <div className="flex flex-col h-full bg-gray-100 p-4">
+        <div className="flex flex-col h-full bg-gray-50 p-4 rounded-lg">
         <div className="flex-grow overflow-auto mb-4">
             {messages.map((message) => (
             <div key={message.id} className={`mb-4 ${message.sender === 'user' ? 'text-right' : 'text-left'}`}>

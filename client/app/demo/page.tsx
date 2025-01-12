@@ -8,9 +8,9 @@ export default function Home() {
     const [pdfUrl, setPdfUrl] = useState('/sample.pdf')
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 h-screen">
-        <Transcript />
-        <Sources pdfUrl={pdfUrl} />
+        <div className = "p-4 grid grid-cols-2 h-screen bg-[#0A3D64]">
+                <Transcript />
+                <Sources pdfUrl={pdfUrl} />
         </div>
     )
 }
