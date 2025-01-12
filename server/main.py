@@ -76,7 +76,7 @@ async def handle_webhook(request: Request):
 async def websocket_handler(websocket: WebSocket, call_id: str):
     try:
         await websocket.accept()
-        llm_client = LlmClient()
+        llm_client = LlmClient(manager)
 
         # Send optional config to Retell server
         config = ConfigResponse(
@@ -158,27 +158,6 @@ async def websocket_endpoint(websocket: WebSocket, client_id: Optional[str] = No
             data = await websocket.receive_json()
             event = data["event"]
             print(event)
-            if event == "get_db":
-                # Retrieve all calls from the database
-                db = get_db()
-                message = {
-                    "event": "db_response",
-                    "data": db,
-                }
-                # Send the calls data back to the client
-                await manager.send_personal_message(
-                    message,
-                    websocket,
-                )
-            if event == "get_calls":
-                calls = get_all_calls()
-                message = {"event": "calls_response", "data": calls}
-                await manager.send_personal_message(message, websocket)
-            if event == "get_all_dbs":
-                db = get_db()
-                calls = get_all_calls()
-                message = {"event": "combined_response", "calls": calls, "db": db}
-                await manager.send_personal_message(message, websocket)
 
     except WebSocketDisconnect:
         print("Disconnecting...", client_id)
