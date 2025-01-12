@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { Button } from "@/components/ui/button";
 import { Mic, User, Bot } from "lucide-react";
 
 type Message = {
@@ -22,6 +21,14 @@ export default function Transcript() {
             socket.onopen = () => {
                 console.log("Connected to Retell AI.");
                 setSocket(socket);
+
+                socket.send(
+                    JSON.stringify({
+                        event: "start_conversation",
+                        content: "Hello! Let's begin our chat.",
+                        timestamp: new Date().toISOString(),
+                    })
+                );
             };
 
             socket.onmessage = (event) => {
@@ -50,21 +57,6 @@ export default function Transcript() {
     useEffect(() => {
         transcriptEndRef.current?.scrollIntoView({ behavior: "smooth" });
     }, [messages]);
-
-    const handleSend = () => {
-        if (input.trim() && socket?.readyState === WebSocket.OPEN) {
-            const userMessage: Message = { id: messages.length + 1, text: input, sender: "user" };
-            setMessages((prev) => [...prev, userMessage]);
-            socket.send(
-                JSON.stringify({
-                    event: "user_message",
-                    content: input,
-                    timestamp: new Date().toISOString(),
-                })
-            );
-            setInput("");
-        }
-    };
 
     const handleMicToggle = () => {
         setIsListening((prev) => !prev);
