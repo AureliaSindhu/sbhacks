@@ -28,11 +28,11 @@ export default function Home() {
               className="w-full h-auto"
             />
             </div>
-          <div className="flex space-x-2">
-            <Button size="lg" className="bg-gray-600 p-4 ml-4 mr-4 hover:bg-yellow-500 hover:text-black">
+          <div className="flex space-x-4">
+            <Button size="lg" className="bg-[#EFE63E] text-black p-4 ml-4 mr-4 text-lg hover:text-white">
               Start Learning
             </Button>
-            <Button size="lg" className="bg-gray-600 p-4 ml-4 mr-4 hover:bg-yellow-500 hover:text-black">
+            <Button size="lg" className="bg-[#342F2F] border-2 border-gray-300 p-4 ml-4 mr-4 text-lg hover:text-white hover:border-none">
               Watch Demo
             </Button>
           </div>
